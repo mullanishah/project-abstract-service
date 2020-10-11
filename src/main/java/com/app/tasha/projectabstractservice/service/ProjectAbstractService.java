@@ -1,5 +1,10 @@
 package com.app.tasha.projectabstractservice.service;
 
-public interface ProjectAbstractService {
+import java.util.List;
+import com.app.tasha.projectabstractservice.pojo.ProjectAbstract;
 
+public interface ProjectAbstractService {
+	
+	public List<ProjectAbstract> getAllProjectAbstracts();
+	
 }

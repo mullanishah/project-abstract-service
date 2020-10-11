@@ -1,5 +1,7 @@
 package com.app.tasha.projectabstractservice.pojo;
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -11,6 +13,9 @@ public class ProjectAbstract {
 	private String category;
 	private String abstractDescription;
 	private String status;
+	private ProjectGroup projectGroup;
+	private List<Student> projectGroupMembers;
+	private Faculty projectGuide;
 	
 	public Long getId() {
 		return id;
@@ -67,12 +72,36 @@ public class ProjectAbstract {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	public ProjectGroup getProjectGroup() {
+		return projectGroup;
+	}
+
+	public void setProjectGroup(ProjectGroup projectGroup) {
+		this.projectGroup = projectGroup;
+	}
+
+	public List<Student> getProjectGroupMembers() {
+		return projectGroupMembers;
+	}
+
+	public void setProjectGroupMembers(List<Student> projectGroupMembers) {
+		this.projectGroupMembers = projectGroupMembers;
+	}
+
+	public Faculty getProjectGuide() {
+		return projectGuide;
+	}
+
+	public void setProjectGuide(Faculty projectGuide) {
+		this.projectGuide = projectGuide;
+	}
 
 	@Override
 	public String toString() {
 		return "ProjectAbstract [id=" + id + ", groupId=" + groupId + ", topicName=" + topicName + ", problemStatement="
-				+ problemStatement + ", category=" + category + ", abstractDescription=" + abstractDescription
-				+ ", status=" + status + "]";
+				+ problemStatement + ", category=" + category + ", abstractDescription=" + abstractDescription + ", status=" + status 
+				+ ", projectGroup=" + projectGroup + ", projectGroupMembers=" + projectGroupMembers + ", projectGuide=" + projectGuide + "]";
 	}
 	
 }
