@@ -59,21 +59,27 @@ public class ProjectAbstractController {
 	public ResponseEntity<ProjectAbstract> createProjectAbstract(@RequestHeader Map<String, String> requestHeaders,
 																 @RequestBody ProjectAbstract projectAbstract) {
 		LOG.info("event=CREATE_PROJECT_ABSTRACT");
-		return null;
+		ProjectAbstract abstractObject = projectAbstractService.createProjectAbstract(projectAbstract);
+		return new ResponseEntity<ProjectAbstract>(abstractObject, HttpStatus.CREATED);
 	}
 	
 	@PutMapping(value = "update", consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value = "Update project abstract")
 	public ResponseEntity<ProjectAbstract> updateProjectAbstract(@RequestHeader Map<String, String> requestHeaders,
 			 													 @RequestBody ProjectAbstract projectAbstract){
-		return null;
+		LOG.info("event=UPDATE_PROJECT_ABSTRACT");
+		ProjectAbstract abstractObject = projectAbstractService.updateProjectAbstract(projectAbstract);
+		return ResponseEntity.ok().body(abstractObject);
 	}
 	
 	@DeleteMapping(value = "delete/{abstractId}", consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value = "Delete project abstract")
-	public ResponseEntity<ProjectAbstract> deleteProjectAbstract(@RequestHeader Map<String, String> requestHeaders,
-																 @PathVariable(value = "abstractId") Long abstractId){
-		return null;
+	public ResponseEntity<String> deleteProjectAbstract(@RequestHeader Map<String, String> requestHeaders,
+																 @PathVariable(value = "abstractId") Long abstractId,
+																 @RequestBody ProjectAbstract projectAbstract){
+		LOG.info("event=DELETE_PROJECT_ABSTRACT");
+		String deleteStatus = projectAbstractService.deleteProjectAbstract(projectAbstract);
+		return ResponseEntity.ok().body(deleteStatus);
 	}
 	
 	@GetMapping(value = "hello")

@@ -9,4 +9,10 @@ public interface ProjectAbstractService {
 	
 	public ProjectAbstract getProjectAbstract(Long abstractId);
 	
+	public ProjectAbstract createProjectAbstract(ProjectAbstract projectAbstract);
+	
+	public ProjectAbstract updateProjectAbstract(ProjectAbstract projectAbstract);
+	
+	public String deleteProjectAbstract(ProjectAbstract projectAbstract);
+	
 }

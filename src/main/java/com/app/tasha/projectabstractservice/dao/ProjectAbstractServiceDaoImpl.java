@@ -123,6 +123,7 @@ public class ProjectAbstractServiceDaoImpl implements ProjectAbstractServiceDao 
 			pst_updateAbstract.setString(4, projectAbstract.getCategory());
 			pst_updateAbstract.setString(5, projectAbstract.getAbstractDescription());
 			pst_updateAbstract.setString(6, projectAbstract.getStatus());
+			pst_updateAbstract.setLong(7, projectAbstract.getGroupId());
 			int status = pst_updateAbstract.executeUpdate();
 			if(status == 1) {
 				ResultSet rst = pst_updateAbstract.getGeneratedKeys();

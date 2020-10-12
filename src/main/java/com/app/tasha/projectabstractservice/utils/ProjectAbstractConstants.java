@@ -14,7 +14,18 @@ public class ProjectAbstractConstants {
 	
 	public static String DELETE_PROJECT_ABSTRACT = "delete from project_abstract where project_group_id=? and topic_name=?";
 	
-	// ------------------- Task Status ------------------- // 
+	// ------------------- Abstract DB Status ------------------- //
+	public final static String STATUS_WIP = "WIP";
+	
+	public final static String STATUS_AWAITING_APPROVAL = "AWAITING_APPROVAL";
+	
+	public final static String STATUS_APPROVED = "APPROVED";
+	
+	public final static String STATUS_REWORK_NEEDED = "REWORK_NEEDED";
+	
+	// ------------------- Abstract UI Status ------------------- //
+	public final static String ABSTRACT_FEATURE = "ABSTRACT";
+	
 	public final static String WIP = "Work In Progress";
 	
 	public final static String AWAITING_APPROVAL = "Awaiting Approval";

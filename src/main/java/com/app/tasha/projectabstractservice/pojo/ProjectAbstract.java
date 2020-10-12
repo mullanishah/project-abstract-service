@@ -13,6 +13,7 @@ public class ProjectAbstract {
 	private String category;
 	private String abstractDescription;
 	private String status;
+	private String action;
 	private ProjectGroup projectGroup;
 	private List<Student> projectGroupMembers;
 	private Faculty projectGuide;
@@ -73,6 +74,14 @@ public class ProjectAbstract {
 		this.status = status;
 	}
 	
+	public String getAction() {
+		return action;
+	}
+
+	public void setAction(String action) {
+		this.action = action;
+	}
+
 	public ProjectGroup getProjectGroup() {
 		return projectGroup;
 	}
@@ -101,7 +110,7 @@ public class ProjectAbstract {
 	public String toString() {
 		return "ProjectAbstract [id=" + id + ", groupId=" + groupId + ", topicName=" + topicName + ", problemStatement="
 				+ problemStatement + ", category=" + category + ", abstractDescription=" + abstractDescription + ", status=" + status 
-				+ ", projectGroup=" + projectGroup + ", projectGroupMembers=" + projectGroupMembers + ", projectGuide=" + projectGuide + "]";
+				+ ", action=" + action + ", projectGroup=" + projectGroup + ", projectGroupMembers=" + projectGroupMembers 
+				+ ", projectGuide=" + projectGuide + "]";
 	}
-	
 }
