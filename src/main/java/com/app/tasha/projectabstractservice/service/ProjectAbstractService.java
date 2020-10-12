@@ -7,4 +7,6 @@ public interface ProjectAbstractService {
 	
 	public List<ProjectAbstract> getAllProjectAbstracts();
 	
+	public ProjectAbstract getProjectAbstract(Long abstractId);
+	
 }

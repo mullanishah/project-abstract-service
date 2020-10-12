@@ -3,10 +3,8 @@ package com.app.tasha.projectabstractservice.service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.app.tasha.projectabstractservice.adapter.ProjectGroupAdapter;
 import com.app.tasha.projectabstractservice.dao.ProjectAbstractServiceDao;
 import com.app.tasha.projectabstractservice.pojo.ProjectAbstract;
@@ -35,6 +33,21 @@ public class ProjectAbstractServiceImpl implements ProjectAbstractService {
 			projectAbstract.setProjectGroup(group);
 		});
 		return projectAbstracts;
+	}
+	
+	@Override
+	public ProjectAbstract getProjectAbstract(Long abstractId) {
+		ProjectAbstract projectAbstract = projectAbstractDao.getProjectAbstract(abstractId);
+		
+		Map<Long, ProjectGroup> projectGroupMap = getGroupDetails();
+		ProjectGroup group = projectGroupMap.get(projectAbstract.getGroupId());
+		
+		projectAbstract.setProjectGuide(group.getGuide());
+		projectAbstract.setProjectGroupMembers(group.getProjectMembers());
+		group.setGuide(null);
+		group.setProjectMembers(null);
+		projectAbstract.setProjectGroup(group);
+		return projectAbstract;
 	}
 	
 	private Map<Long, ProjectGroup> getGroupDetails() {
